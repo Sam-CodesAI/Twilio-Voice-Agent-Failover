@@ -12,14 +12,29 @@ import { generateStreamTwiML, generateFallbackTwiML } from './twilio/twiml';
 import { StreamBridge } from './stream/bridge';
 import { MetricsCollector } from './telemetry/metrics';
 
+import { renderDashboardHtml } from './dashboard/html';
+
 export default {
   async fetch(request: Request, env: Env, _ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     const pathname = url.pathname;
     const method = request.method;
 
-    // Route: Root Info
-    if (pathname === '/' && method === 'GET') {
+    // Route: Root & Mission Control Dashboard
+    if ((pathname === '/' || pathname === '/dashboard') && method === 'GET') {
+      const acceptsHtml = request.headers.get('Accept')?.includes('text/html');
+      const forceJson = url.searchParams.get('format') === 'json';
+
+      if (pathname === '/dashboard' || (acceptsHtml && !forceJson)) {
+        const html = renderDashboardHtml(env, url.host);
+        return new Response(html, {
+          headers: {
+            'Content-Type': 'text/html; charset=utf-8',
+            'Cache-Control': 'no-cache',
+          },
+        });
+      }
+
       return new Response(
         JSON.stringify(
           {
@@ -27,6 +42,7 @@ export default {
             version: '1.0.0',
             runtime: 'Cloudflare Workers (Edge)',
             endpoints: {
+              dashboard: 'GET /dashboard',
               incoming_webhook: 'POST /voice/incoming',
               media_stream: 'GET /voice/stream (WebSocket Upgrade)',
               failover_fallback: 'POST /voice/fallback',
