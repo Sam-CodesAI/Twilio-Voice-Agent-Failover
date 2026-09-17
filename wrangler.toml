@@ -6,7 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 # Production and local environment variables
 [vars]
 ELEVENLABS_MODEL_ID = "eleven_turbo_v2"
-ELEVENLABS_VOICE_ID = "21m00Tcm4TlvDq8ikWAM"
+ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 FAILOVER_CONNECT_TIMEOUT_MS = "1200"
 FAILOVER_TTFT_TIMEOUT_MS = "1500"
 FALLBACK_HUMAN_NUMBER = "+18005550199"
