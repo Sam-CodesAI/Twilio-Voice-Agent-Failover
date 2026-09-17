@@ -2,6 +2,10 @@
 
 > **High-availability, enterprise-grade Cloudflare Worker telephony bridge connecting Twilio Voice Media Streams to ElevenLabs Conversational AI with an autonomous, sub-second watchdog failover engine (zero dropped calls).**
 
+🌐 **Live Global Edge Deployment:** [**`https://twilio-voice-agent-failover.sam-codes.workers.dev`**](https://twilio-voice-agent-failover.sam-codes.workers.dev)  
+📊 **Live Telemetry & Health:** [**`https://twilio-voice-agent-failover.sam-codes.workers.dev/health`**](https://twilio-voice-agent-failover.sam-codes.workers.dev/health)  
+📈 **Live Stage Latency Benchmarks:** [**`https://twilio-voice-agent-failover.sam-codes.workers.dev/metrics`**](https://twilio-voice-agent-failover.sam-codes.workers.dev/metrics)  
+
 ---
 
 ## 🎯 The Engineering Problem & Invariant
