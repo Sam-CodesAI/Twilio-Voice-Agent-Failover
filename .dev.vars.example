@@ -1,0 +1,16 @@
+# Twilio Credentials (from Twilio Console)
+TWILIO_ACCOUNT_SID=ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+TWILIO_AUTH_TOKEN=your_twilio_auth_token_here
+TWILIO_PHONE_NUMBER=+18005550100
+
+# ElevenLabs Conversational AI Credentials
+ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
+ELEVENLABS_AGENT_ID=your_conversational_ai_agent_id_here
+ELEVENLABS_VOICE_ID=21m00Tcm4TlvDq8ikWAM
+
+# Human Escalation Fallback (E.164 phone number)
+FALLBACK_HUMAN_NUMBER=+18005550199
+
+# Watchdog Failover Deadlines (Milliseconds)
+FAILOVER_CONNECT_TIMEOUT_MS=1200
+FAILOVER_TTFT_TIMEOUT_MS=1500
